@@ -5,19 +5,17 @@
 class Ui
 {
     public:
-        int choix;
-
         Ui();
         ~Ui();
         void gestionMenu();
+        int getChoix();
     protected:
     private:
         void afficheMenu();
         void choixMenu();
-        void redirectionMenu();
-        void nouvelEnregistrement();
 
         static bool alreadyCreated;
+        int choix;
 };
 
 #endif // UI_H

@@ -12,6 +12,8 @@ class Coeur
     private:
         Page *buckets;
         static bool alreadyCreated;
+        int hachage(int a, int n);
+
     public:
 
 

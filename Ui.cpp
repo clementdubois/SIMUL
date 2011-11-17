@@ -7,7 +7,6 @@ using namespace std;
 void Ui::gestionMenu(){
     afficheMenu();
     choixMenu();
-    redirectionMenu();
 }
 
 void Ui::afficheMenu(){
@@ -17,6 +16,7 @@ void Ui::afficheMenu(){
     printf(" 3 - Supprimer un enregistrement\n");
     printf(" 4 - Afficher un enregistrement\n");
     printf(" 5 - Afficher une page\n");
+    printf(" 6 - Quitter le programme");
 }
 
 void Ui::choixMenu(){
@@ -24,35 +24,11 @@ void Ui::choixMenu(){
     scanf("%d", &choix);
 }
 
-void Ui::redirectionMenu(){
 
-    switch(choix){
-        case 1 :
-            //creationFichier();
-            break;
-        case 2 :
-            nouvelEnregistrement();
-            break;
-        case 3 :
-            printf("Choix : 3 \n");
-            break;
-        case 4 :
-            printf("Choix : 4 \n");
-            break;
-        case 5 :
-            printf("Choix : 5 \n");
-            break;
-        case 6 :
-            printf("Choix : 6 \n");
-            break;
-    }
+/*-------------------Setter / Getter------------------------------*/
+int Ui::getChoix(){
+    return choix;
 }
-
-void Ui::nouvelEnregistrement(){
-    Enregistrement e;
-
-}
-
 
 /*--------------------Constructor---------------------------------*/
 Ui::Ui(){

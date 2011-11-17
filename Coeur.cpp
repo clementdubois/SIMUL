@@ -3,6 +3,13 @@
 #include <iostream>
 using namespace std;
 
+
+/*-------------------Fonctions Membres----------------------------*/
+int hachage(int a, int n){
+    return a%n;
+}
+
+/*--------------------Constructor/Destructor----------------------*/
 Coeur::Coeur(){
     if (alreadyCreated)
         cout << "Vous ne pouvez pas crŽer une seconde instance de la classe Singleton." << endl;

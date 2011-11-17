@@ -15,10 +15,34 @@ int main()
     Page p;
     Fichier f;
 
-    ui.gestionMenu();
+    bool quit=false;
 
-    cout << sizeof(e.m_b) << " " << sizeof(f.m_pages[0].m_enregistrements[0]) << endl;
+    while(!quit){
+        ui.gestionMenu();
+
+        switch(ui.getChoix()){
+        case 1 :
+            //creationFichier();
+            break;
+        case 2 :
+            //nouvelEnregistrement();
+            break;
+        case 3 :
+            printf("Choix : 3 \n");
+            break;
+        case 4 :
+            printf("Choix : 4 \n");
+            break;
+        case 5 :
+            printf("Choix : 5 \n");
+            break;
+        case 6 :
+            printf("Choix : 6 \n");
+            break;
+        default :
+            quit = true;
+        }
+    }
+
     return 0;
 }
-
-
