@@ -5,14 +5,16 @@
 class Ui
 {
     public:
+        int choix;
+
         Ui();
         ~Ui();
         void gestionMenu();
     protected:
     private:
         void afficheMenu();
-        int choixMenu();
-        void redirectionMenu(int choix);
+        void choixMenu();
+        void redirectionMenu();
         void nouvelEnregistrement();
 
         static bool alreadyCreated;

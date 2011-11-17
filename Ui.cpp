@@ -5,30 +5,26 @@ using namespace std;
 
 /*-------------------Fonctions Membres----------------------------*/
 void Ui::gestionMenu(){
-    int choix;
-
     afficheMenu();
-    choix = choixMenu();
-    redirectionMenu(choix);
+    choixMenu();
+    redirectionMenu();
 }
 
 void Ui::afficheMenu(){
     printf("Veuillez choisir l'action à effectuer\n");
-    printf(" 1 - Créer un fichier \n");
+    printf(" 1 - Creer un fichier \n");
     printf(" 2 - Inserer un enregistrement\n");
     printf(" 3 - Supprimer un enregistrement\n");
     printf(" 4 - Afficher un enregistrement\n");
     printf(" 5 - Afficher une page\n");
 }
 
-int Ui::choixMenu(){
-    int choix = 0;
+void Ui::choixMenu(){
     printf("Entrer le nombre : ");
     scanf("%d", &choix);
-    return choix;
 }
 
-void Ui::redirectionMenu(int choix){
+void Ui::redirectionMenu(){
 
     switch(choix){
         case 1 :
