@@ -4,16 +4,20 @@
 #include "Fichier.h"
 #include "Coeur.h"
 #include "Ui.h"
+#include "Bucket.h"
+#include <vector>
 
 using namespace std;
 
 int main()
 {
-    Coeur coeur;
+    //Coeur coeur;
     Ui ui;
-    Enregistrement e;
-    Page p;
-    Fichier f;
+    Bucket b;
+    b.addPage(Page());
+    b.addPage(Page());
+
+    cout << b << endl;
 
     bool quit=false;
 
@@ -25,7 +29,7 @@ int main()
             //creationFichier();
             break;
         case 2 :
-            //nouvelEnregistrement();
+//            coeur.placeEnregistrement(ui.nouvelEnregistrement());
             break;
         case 3 :
             printf("Choix : 3 \n");

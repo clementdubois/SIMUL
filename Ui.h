@@ -1,6 +1,7 @@
 #ifndef UI_H
 #define UI_H
 
+#include "Enregistrement.h"
 
 class Ui
 {
@@ -9,6 +10,7 @@ class Ui
         ~Ui();
         void gestionMenu();
         int getChoix();
+        Enregistrement nouvelEnregistrement();
     protected:
     private:
         void afficheMenu();

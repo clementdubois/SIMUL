@@ -32,6 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Coeur.cpp" />
+		<Unit filename="Coeur.h" />
+		<Unit filename="Enregistrement.cpp" />
+		<Unit filename="Enregistrement.h" />
+		<Unit filename="Fichier.cpp" />
+		<Unit filename="Fichier.h" />
+		<Unit filename="Page.cpp" />
+		<Unit filename="Page.h" />
+		<Unit filename="Ui.cpp" />
+		<Unit filename="Ui.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

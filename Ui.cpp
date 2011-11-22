@@ -10,18 +10,29 @@ void Ui::gestionMenu(){
 }
 
 void Ui::afficheMenu(){
-    printf("Veuillez choisir l'action ˆ effectuer\n");
-    printf(" 1 - Creer un fichier \n");
-    printf(" 2 - Inserer un enregistrement\n");
-    printf(" 3 - Supprimer un enregistrement\n");
-    printf(" 4 - Afficher un enregistrement\n");
-    printf(" 5 - Afficher une page\n");
-    printf(" 6 - Quitter le programme");
+    cout << "Veuillez choisir l'action ˆ effectuer" << endl;
+    cout << " 1 - Creer un fichier"                 << endl;
+    cout << " 2 - Inserer un enregistrement"        << endl;
+    cout << " 3 - Supprimer un enregistrement"      << endl;
+    cout << " 4 - Afficher un enregistrement"       << endl;
+    cout << " 5 - Afficher une page"                << endl;
+    cout << " 6 - Quitter le programme"             << endl;
 }
 
 void Ui::choixMenu(){
-    printf("Entrer le nombre : ");
-    scanf("%d", &choix);
+    cout << "Entrer le nombre : ";
+    cin >> choix;
+}
+
+Enregistrement Ui::nouvelEnregistrement(){
+    Enregistrement e;
+
+    cout << "Entrer le nombre A : ";
+    cin >> e.m_a;
+    cout << "Entrer le texte B : ";
+    cin >> e.m_b;
+
+    return e;
 }
 
 
@@ -30,7 +41,7 @@ int Ui::getChoix(){
     return choix;
 }
 
-/*--------------------Constructor---------------------------------*/
+/*--------------------Constructor/Destructor----------------------*/
 Ui::Ui(){
     if (alreadyCreated)
         cout << "Vous ne pouvez pas crŽer une seconde instance de la classe Singleton." << endl;
