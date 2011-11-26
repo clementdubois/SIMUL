@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1321999490 source:/Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/main.cpp
+1322314223 source:/Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/main.cpp
 	<iostream>
 	"Enregistrement.h"
 	"Page.h"
@@ -8,6 +8,7 @@
 	"Ui.h"
 	"Bucket.h"
 	<vector>
+	<map>
 
 1321543689 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/include/Enregistrement.h
 
@@ -18,15 +19,16 @@
 	<string.h>
 	<iostream>
 
-1321999586 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Enregistrement.h
+1321999683 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Enregistrement.h
 	<iostream>
 
-1321999533 source:/Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Page.cpp
+1322316315 source:/Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Page.cpp
 	"Page.h"
 	"Enregistrement.h"
 	<iostream>
+	<math.h>
 
-1321992868 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Page.h
+1322316166 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Page.h
 	"Enregistrement.h"
 	<iostream>
 
@@ -36,12 +38,14 @@
 1321546062 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Fichier.h
 	"Page.h"
 
-1321996532 source:/Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Coeur.cpp
+1322316458 source:/Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Coeur.cpp
 	"Coeur.h"
+	<math.h>
 	<iostream>
 
-1321920213 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Coeur.h
+1322314077 /Users/clement/Documents/Clement/travail/BDD/Hachage/HachageCPP/Coeur.h
 	<vector>
+	<map>
 	"Page.h"
 	"Enregistrement.h"
 	"Bucket.h"

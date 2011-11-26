@@ -6,6 +6,7 @@
 #include "Ui.h"
 #include "Bucket.h"
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -13,11 +14,9 @@ int main()
 {
     //Coeur coeur;
     Ui ui;
-    Bucket b;
-    b.addPage(Page());
-    b.addPage(Page());
+    Page p;
+    Coeur c;
 
-    cout << b << endl;
 
     bool quit=false;
 
