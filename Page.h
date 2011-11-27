@@ -11,10 +11,12 @@ class Page{
         bool debord();
         int getPageDebordement();
         int premierLibre(); //Retourne la position du premier enregistrement non occupe (-1 si la page est pleine)
-        bool estLibre(int n); // L'enregistrement n est il occupŽ ?
+        bool estLibre(int n); // L'enregistrement n est il occupé ?
         bool estPleine(); // La page est-elle pleine ?
         void ajouterPageDebordement(int cleDebordement); //Modfie la page pour indiquer qu'elle à une page de débordement
         void insererEnregistrement(Enregistrement e);
+        Enregistrement getEnregistrement(int n); // renvoit l'enregistrement à la position n
+        void supprimerEnregistrement(int n); //Supprime l'enregistrement n de la page
 
         void afficher(std::ostream &out) const;
 

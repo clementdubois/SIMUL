@@ -7,11 +7,11 @@
 	<File name="Bucket.h" open="1" top="0" tabpos="11">
 		<Cursor position="93" topLine="0" />
 	</File>
-	<File name="Coeur.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="440" topLine="0" />
+	<File name="Coeur.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="453" topLine="0" />
 	</File>
 	<File name="Coeur.h" open="1" top="0" tabpos="6">
-		<Cursor position="105" topLine="0" />
+		<Cursor position="331" topLine="2" />
 	</File>
 	<File name="Enregistrement.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="206" topLine="0" />
@@ -25,11 +25,11 @@
 	<File name="Fichier.h" open="0" top="0" tabpos="6">
 		<Cursor position="81" topLine="0" />
 	</File>
-	<File name="Page.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="1041" topLine="22" />
+	<File name="Page.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="219" topLine="0" />
 	</File>
 	<File name="Page.h" open="1" top="0" tabpos="3">
-		<Cursor position="336" topLine="0" />
+		<Cursor position="405" topLine="0" />
 	</File>
 	<File name="Ui.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="815" topLine="14" />
@@ -38,6 +38,6 @@
 		<Cursor position="176" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="317" topLine="11" />
+		<Cursor position="243" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

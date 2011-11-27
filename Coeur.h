@@ -14,10 +14,14 @@ class Coeur
     public:
         Coeur();
         ~Coeur();
-        void placeEnregistrement(Enregistrement e);
+        void placeEnregistrement(Enregistrement enr);
         int trouverPage(int cle); //Trouve la page pour mettre l'enregistrement, renvoit -1 si aucune page n'est trouvé
         void createBucket();
         void creerPageDebordement();
+        bool estLibre(int n); // La page n est il occupé ?
+        std::map<int, Page> getPages();
+
+        void afficher(std::ostream &out) ;
 
     protected:
     private:
@@ -39,6 +43,8 @@ class Coeur
     public:
 
 };
+
+std::ostream& operator<<(std::ostream& out, Coeur coeur);
 
 
 #endif // COEUR_H

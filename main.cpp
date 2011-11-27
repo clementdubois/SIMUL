@@ -15,7 +15,9 @@ int main()
     //Coeur coeur;
     Ui ui;
     Page p;
-    Coeur c;
+    Coeur coeur;
+    Enregistrement e;
+    map<int, Page> pages;
 
 
     bool quit=false;
@@ -28,7 +30,10 @@ int main()
             //creationFichier();
             break;
         case 2 :
-//            coeur.placeEnregistrement(ui.nouvelEnregistrement());
+            e = ui.nouvelEnregistrement();
+            cout << endl << coeur << endl;
+            coeur.placeEnregistrement(e);
+            cout << coeur << endl;
             break;
         case 3 :
             printf("Choix : 3 \n");

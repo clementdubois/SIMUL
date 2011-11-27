@@ -6,7 +6,17 @@
 using namespace std;
 
 void Page::insererEnregistrement(Enregistrement e){
-    m_enregistrements[premierLibre()] = e;
+    int position = premierLibre();
+    m_enregistrements[position] = e;
+    m_occupation += pow(2, position);
+}
+
+Enregistrement Page::getEnregistrement(int n){
+        return m_enregistrements[n];
+}
+
+void Page::supprimerEnregistrement(int n){
+    m_occupation -= pow(2,n);
 }
 
 //Modifie les informations de la page pour indiquer que se page de débordement est utilisée et est à l'index cleDebordement
@@ -20,7 +30,10 @@ bool Page::debord(){
 }
 
 int Page::getPageDebordement(){
-    return m_pageDebordement;
+    if(debord())
+        return m_pageDebordement;
+    else
+        return -1;
 }
 
 int Page::premierLibre(){
@@ -36,20 +49,21 @@ bool Page::estLibre(int n){
 }
 
 bool Page::estPleine(){
-    return !(m_occupation & (int)pow(2, NOMBRE_ENREGISTREMENT) - 1);
+    return m_occupation == (int)pow(2, NOMBRE_ENREGISTREMENT) - 1;
 }
 
 void Page::afficher(ostream &out) const{
     //On afffiche chaque enregistrement occupe
     for(int i=1, lequel=0; i<256; i*=2, lequel++){
-        //Si la case est occupŽ on l'affiche
+        //Si la case est occupé on l'affiche
         if(m_occupation & i){
-            out << "\t\tEnregistrement :" << i << " : " ;
+            out << "Enregistrement :" << i << " : " ;
             out << m_enregistrements[lequel] ;
             out << endl;
         }
     }
-    out << "\t\tGestion :"<< m_hasDebord << " / " << m_pageDebordement << " / " << (int)m_occupation;
+    out << "| Deborde ? | Page debordement | occupation |" << endl;
+    out << "|     " <<  m_hasDebord << "     |        " << m_pageDebordement << "        |      " << (int)m_occupation << "     |" << endl;
 
 }
 
