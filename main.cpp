@@ -5,6 +5,7 @@
 #include "Coeur.h"
 #include "Ui.h"
 #include "Bucket.h"
+#include "TestCoeur.h"
 #include <vector>
 #include <map>
 
@@ -18,7 +19,7 @@ int main()
     Coeur coeur;
     Enregistrement e;
     map<int, Page> pages;
-
+    //TestCoeur tests;
 
     bool quit=false;
 
@@ -31,7 +32,6 @@ int main()
             break;
         case 2 :
             e = ui.nouvelEnregistrement();
-            cout << endl << coeur << endl;
             coeur.placeEnregistrement(e);
             cout << coeur << endl;
             break;
@@ -39,13 +39,29 @@ int main()
             printf("Choix : 3 \n");
             break;
         case 4 :
-            printf("Choix : 4 \n");
+            int cle;
+            cle = ui.rechercherEnregistrement();
+            coeur.trouverEnregistrement(cle);
             break;
         case 5 :
-            printf("Choix : 5 \n");
+            int indexPage;
+            indexPage = ui.afficherPage();
+            cout << coeur.trouverPage(indexPage);
             break;
         case 6 :
-            printf("Choix : 6 \n");
+            coeur.placeEnregistrement(Enregistrement(7, "a"));
+            coeur.placeEnregistrement(Enregistrement(12, "az"));
+            coeur.placeEnregistrement(Enregistrement(5, "aze"));
+            coeur.placeEnregistrement(Enregistrement(3, "azer"));
+            coeur.placeEnregistrement(Enregistrement(20, "azert"));
+            coeur.placeEnregistrement(Enregistrement(6, "azerty"));
+            coeur.placeEnregistrement(Enregistrement(10, "azertyu"));
+            coeur.placeEnregistrement(Enregistrement(4, "azertyui"));
+
+            cout << coeur;
+            break;
+        case 7 :
+            //tests.testPlaceEnregistrement();
             break;
         default :
             quit = true;

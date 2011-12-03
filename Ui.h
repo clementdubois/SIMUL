@@ -11,6 +11,9 @@ class Ui
         void gestionMenu();
         int getChoix();
         Enregistrement nouvelEnregistrement();
+        int rechercherEnregistrement();
+        int afficherPage();
+
     protected:
     private:
         void afficheMenu();

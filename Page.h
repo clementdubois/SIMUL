@@ -5,6 +5,8 @@
 
 #include "Enregistrement.h"
 #include <iostream>
+#include <vector>
+
 
 class Page{
     public:
@@ -13,15 +15,18 @@ class Page{
         int premierLibre(); //Retourne la position du premier enregistrement non occupe (-1 si la page est pleine)
         bool estLibre(int n); // L'enregistrement n est il occupé ?
         bool estPleine(); // La page est-elle pleine ?
-        void ajouterPageDebordement(int cleDebordement); //Modfie la page pour indiquer qu'elle à une page de débordement
+        bool estVide(); //La page est elle sans enregistrement ?
+        void ajouterPageDebordement(int cleDebordement); //Modifie la page pour indiquer qu'elle à une page de débordement
+        void supprimerPageDebordement(int cleDebordement); //Modifie la page pour indiquer qu'elle ne déborde plus
         void insererEnregistrement(Enregistrement e);
         Enregistrement getEnregistrement(int n); // renvoit l'enregistrement à la position n
+        std::vector<Enregistrement> getEnregistrementsByCle(int a);
         void supprimerEnregistrement(int n); //Supprime l'enregistrement n de la page
 
         void afficher(std::ostream &out) const;
 
         Enregistrement m_enregistrements[NOMBRE_ENREGISTREMENT];
-        int m_occupation; // Premier bit : le premier enregistrement est utilisé(jusqu'a 32 enregistrements)
+        unsigned int m_occupation; // Premier bit : le premier enregistrement est utilisé(jusqu'a 32 enregistrements)
         bool m_hasDebord; // La page à t'elle une page de débordement ?
         int m_pageDebordement; // Quelle est la page de débordement ?
 

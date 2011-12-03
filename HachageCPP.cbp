@@ -30,6 +30,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-g" />
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Bucket.cpp" />
@@ -42,6 +43,8 @@
 		<Unit filename="Fichier.h" />
 		<Unit filename="Page.cpp" />
 		<Unit filename="Page.h" />
+		<Unit filename="TestCoeur.cpp" />
+		<Unit filename="TestCoeur.h" />
 		<Unit filename="Ui.cpp" />
 		<Unit filename="Ui.h" />
 		<Unit filename="main.cpp" />

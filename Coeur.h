@@ -8,21 +8,29 @@
 
 #define NOMBRE_PAGE 32
 
-/*Coeur du programme (Singleton)*/
+/*Coeur du programme*/
 class Coeur
 {
     public:
         Coeur();
         ~Coeur();
         void placeEnregistrement(Enregistrement enr);
-        int trouverPage(int cle); //Trouve la page pour mettre l'enregistrement, renvoit -1 si aucune page n'est trouvé
-        void createBucket();
-        void creerPageDebordement();
-        bool estLibre(int n); // La page n est il occupé ?
+        Page trouverPage(int cle); //Trouve la page
+        int ajouterPageDebordement(int numPage);
+        bool isDebordement(int numPage); //La page est elle une page de débordement ?
+        int supprimerPage(int numPage); // On indique que la page numPage n'est plus utilisée, retourne l'index de la page de débordement suivante si elle existe
+        Page ajouterPage(int numPage);
+        bool estLibre(int n); // La page n est elle utilisée ?
         std::map<int, Page> getPages();
-
+        int premierePageNonRemplieBucket(int numPage);
+        void pageOccupee(int numPage); /*On met le bit d'occupation de la page à l'index numPage à 1*/
         void afficher(std::ostream &out) ;
+        Page ajouterBucket(int numBucket); //Créer la première page d'un bucket
+        inline bool finRonde();
 
+        std::vector<Enregistrement> trouverEnregistrement(int a); //Trouve les enregistrements dont l'index est a
+
+        friend class TestCoeur; //On permet à la classe de test d'accéder à tout le coeur en public
     protected:
     private:
         std::map<int, Page> m_pages;      //Liste des pages
@@ -31,14 +39,13 @@ class Coeur
         int m_ronde;                      //Index maximum de la ronde
 
         //TODO faire un tableau de int dynamique pour pouvoir ajouter plus de page dans le fichier
-        int m_occupation;                 //Bit à droite à 1 => première page occupée...
+        unsigned int m_occupation;                 //Bit à droite à 1 => première page occupée...
 
-        static bool m_alreadyCreated;     //singleton
-
-        int m_maxDirect;                  // L'index de la dernière page accessible directement
+        int m_nbBuckets;                  // L'index de la dernière page accessible directement
         int m_minDebordement;             // L'index de la dernière page de débordement
 
-        int hachage(int a);
+        int hachage(int a,int n);
+        void reinitialiser();
 
     public:
 

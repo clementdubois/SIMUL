@@ -17,7 +17,7 @@ ostream& operator<<(ostream& out, Enregistrement const& enregistrement){
 
 Enregistrement::Enregistrement(){
     m_a = 0;
-    strcpy(m_b, "test");
+    strcpy(m_b, "");
 }
 Enregistrement::Enregistrement(int a, char* b){
     m_a = a;

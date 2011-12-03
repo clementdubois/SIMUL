@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Bucket.cpp" />
+		<Unit filename="Bucket.h" />
 		<Unit filename="Coeur.cpp" />
 		<Unit filename="Coeur.h" />
 		<Unit filename="Enregistrement.cpp" />
@@ -40,6 +42,8 @@
 		<Unit filename="Fichier.h" />
 		<Unit filename="Page.cpp" />
 		<Unit filename="Page.h" />
+		<Unit filename="TestCoeur.cpp" />
+		<Unit filename="TestCoeur.h" />
 		<Unit filename="Ui.cpp" />
 		<Unit filename="Ui.h" />
 		<Unit filename="main.cpp" />

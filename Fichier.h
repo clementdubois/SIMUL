@@ -2,14 +2,13 @@
 #define FICHIER_H
 
 #include "Page.h"
-#define NOMBRE_PAGE 128
 #define OCCUPATION NOMBRE_PAGE/8
 
 class Fichier
 {
     public:
-        Page m_pages[NOMBRE_PAGE];
-        char m_occupation[OCCUPATION];
+//        Page m_pages[NOMBRE_PAGE];
+ //       char m_occupation[OCCUPATION];
         int m_fctHach;
 
         Fichier();

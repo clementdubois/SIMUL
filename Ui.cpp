@@ -10,13 +10,16 @@ void Ui::gestionMenu(){
 }
 
 void Ui::afficheMenu(){
-    cout << "Veuillez choisir l'action ˆ effectuer" << endl;
-    cout << " 1 - Creer un fichier"                 << endl;
-    cout << " 2 - Inserer un enregistrement"        << endl;
-    cout << " 3 - Supprimer un enregistrement"      << endl;
-    cout << " 4 - Afficher un enregistrement"       << endl;
-    cout << " 5 - Afficher une page"                << endl;
-    cout << " 6 - Quitter le programme"             << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "| Veuillez choisir l'action a effectuer |" << endl;
+    cout << "| 1 - Creer un fichier                  |" << endl;
+    cout << "| 2 - Inserer un enregistrement         |" << endl;
+    cout << "| 3 - Supprimer un enregistrement       |" << endl;
+    cout << "| 4 - Afficher un enregistrement        |" << endl;
+    cout << "| 5 - Afficher une page                 |" << endl;
+    cout << "| 6 - Quitter le programme              |" << endl;
+    cout << "| 7 - Lancer les tests                  |" << endl;
+    cout << "-----------------------------------------" << endl;
 }
 
 void Ui::choixMenu(){
@@ -35,6 +38,24 @@ Enregistrement Ui::nouvelEnregistrement(){
     return e;
 }
 
+int Ui::rechercherEnregistrement(){
+    int cle;
+
+    cout << "Quelle est la cle des l'enregistrements recherches : ";
+    cin >> cle;
+
+    return cle;
+}
+
+int Ui::afficherPage(){
+    int indexPage;
+
+    cout << "Quelle page voulez-vous afficher : ";
+    cin >> indexPage;
+
+    return indexPage;
+}
+
 
 /*-------------------Setter / Getter------------------------------*/
 int Ui::getChoix(){
@@ -44,14 +65,14 @@ int Ui::getChoix(){
 /*--------------------Constructor/Destructor----------------------*/
 Ui::Ui(){
     if (alreadyCreated)
-        cout << "Vous ne pouvez pas crŽer une seconde instance de la classe Singleton." << endl;
+        cout << "Vous ne pouvez pas créer une seconde instance de la classe Singleton." << endl;
     // Sinon, on construit la classe et on dŽclare l'objet crŽŽ
     alreadyCreated = true;
 }
 
 Ui::~Ui()
 {
-    // Si on veut pouvoir recrŽer la classe plus tard, on dŽclare l'objet non-existant
+    // Si on veut pouvoir recréer la classe plus tard, on déclare l'objet non-existant
     alreadyCreated = false;
 }
 

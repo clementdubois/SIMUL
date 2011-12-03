@@ -11,10 +11,23 @@ void Page::insererEnregistrement(Enregistrement e){
     m_occupation += pow(2, position);
 }
 
+/*Récupère un enregistrement grâce à son index n dans la page*/
 Enregistrement Page::getEnregistrement(int n){
         return m_enregistrements[n];
 }
+/*Récupère des enregistrements grâce à la cle a*/
+vector<Enregistrement> Page::getEnregistrementsByCle(int a){
+    vector<Enregistrement> results;
 
+    for(int n = 0; n<NOMBRE_ENREGISTREMENT; n++){
+        if(!estLibre(n))
+            results.push_back(getEnregistrement(n));
+    }
+
+    return results;
+}
+
+/*Supprime un enregistrement de l'emplacement n*/
 void Page::supprimerEnregistrement(int n){
     m_occupation -= pow(2,n);
 }
@@ -23,6 +36,10 @@ void Page::supprimerEnregistrement(int n){
 void Page::ajouterPageDebordement(int cleDebordement){
     m_hasDebord = true;
     m_pageDebordement = cleDebordement;
+}
+//Modifie la page pour indiquer qu'elle ne déborde plus
+void Page::supprimerPageDebordement(int cleDebordement){
+    m_hasDebord = false;
 }
 
 bool Page::debord(){
@@ -52,18 +69,27 @@ bool Page::estPleine(){
     return m_occupation == (int)pow(2, NOMBRE_ENREGISTREMENT) - 1;
 }
 
+bool Page::estVide(){
+    return m_occupation == 0;
+}
+
 void Page::afficher(ostream &out) const{
     //On afffiche chaque enregistrement occupe
-    for(int i=1, lequel=0; i<256; i*=2, lequel++){
+    int max = sizeof(m_occupation)*8;
+    for(int n=0, occ = m_occupation; n<max; n++, occ >>= 1){
         //Si la case est occupé on l'affiche
-        if(m_occupation & i){
-            out << "Enregistrement :" << i << " : " ;
-            out << m_enregistrements[lequel] ;
+        if(occ & 1){
+            out << "-----------------------------------" << endl;
+            out << "Enregistrement :" << n << " : " ;
+            out << m_enregistrements[n] ;
             out << endl;
         }
     }
+    out << "---------------------------------------------" << endl;
     out << "| Deborde ? | Page debordement | occupation |" << endl;
-    out << "|     " <<  m_hasDebord << "     |        " << m_pageDebordement << "        |      " << (int)m_occupation << "     |" << endl;
+    out << "|    " << boolalpha <<  m_hasDebord << "   |    " << m_pageDebordement ;
+    out << "     |     " << "0x" << hex << m_occupation  << "    |" << endl;
+    out << "---------------------------------------------" << endl;
 
 }
 
